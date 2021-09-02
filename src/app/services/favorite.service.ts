@@ -31,7 +31,7 @@ export class FavoriteService {
     let item=Favorites.find(f=>f.album.id===album.id);
 
     if(item){
-      Favorites.slice(Favorites.indexOf(item),1)
+      Favorites.splice(Favorites.indexOf(item),1)
       this.toastrService.success("Favoriler'den çıkarıldı", album.title)
     }else{
       this.toastrService.error("Daha önce sildiniz", album.title)
